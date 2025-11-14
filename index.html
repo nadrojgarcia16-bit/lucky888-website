@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Lucky 888 Autoworks, Inc.</title>
+  <meta name="description" content="Lucky 888 Autoworks, Inc. - Quality vehicle body fabrication and custom units in Taytay, Rizal.">
+  <style>
+    :root {
+      --accent: #2d5a27;
+      --muted: #6b6b6b;
+      --bg: #fffbea;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Inter, system-ui, Arial, sans-serif;
+      line-height: 1.6;
+      color: #111;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    header { background: #fff; border-bottom: 1px solid #e6eef8; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 1.5rem; }
+    .nav { display: flex; justify-content: space-between; align-items: center; }
+    .brand { font-weight: 700; font-size: 1.3rem; color: var(--accent); display: flex; align-items: center; gap: 10px; }
+    .brand img { height: 60px; }
+    nav ul { list-style: none; display: flex; gap: 1.2rem; }
+    nav a { text-decoration: none; color: #333; font-weight: 500; }
+    nav a:hover { color: var(--accent); }
+    .cta { background: var(--accent); color: white; padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; font-weight: 600; cursor: pointer; border: none; }
+
+    .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; padding: 3rem 0; }
+    .hero h1 { color: var(--accent); font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 1rem; }
+    .lead { color: var(--muted); }
+
+    .slideshow-container { position: relative; max-width: 100%; border-radius: 12px; overflow: hidden; }
+    .slide { display: none; }
+    .slide img { width: 100%; border-radius: 12px; }
+    .prev, .next {
+      cursor: pointer; position: absolute; top: 50%; width: auto; margin-top: -22px; padding: 12px; color: white; font-weight: bold;
+      font-size: 22px; border-radius: 0 3px 3px 0; user-select: none; background: rgba(0,0,0,0.3); transition: background 0.3s;
+    }
+    .next { right: 0; border-radius: 3px 0 0 3px; }
+    .prev:hover, .next:hover { background: rgba(0,0,0,0.6); }
+    .fade { animation: fade 1s ease-in-out; }
+    @keyframes fade { from { opacity: 0.4; } to { opacity: 1; } }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+    .card { background: #fff; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.05); transition: transform 0.2s ease, box-shadow 0.2s ease; text-align: center; overflow: hidden; padding: 1.5rem; cursor: pointer; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    .card h3 { color: var(--accent); margin: 0.8rem 0 0.4rem; }
+    .card p { color: var(--muted); font-size: 0.95rem; padding: 0 1rem 1rem; }
+
+    section h2 { text-align: center; color: var(--accent); margin-bottom: 1rem; }
+
+    footer { background: #fff; border-top: 1px solid #e6eef8; text-align: center; padding: 2rem 0; color: var(--muted); }
+    footer p { margin: 0.3rem 0; }
+
+    .modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); overflow:auto; z-index:9999; padding:2rem; animation: fadeIn 0.3s ease; }
+    .modal-content { background:#fffbea; max-width:900px; margin:3rem auto; border-radius:12px; padding:2rem; position:relative; }
+    .modal-close { position:absolute; top:1rem; right:1.5rem; font-size:1.5rem; cursor:pointer; }
+    @keyframes fadeIn { from {opacity:0} to {opacity:1} }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <img src="logo.png" alt="Lucky 888 Logo">
+        Lucky 888 Autoworks, Inc.
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#" id="companyProfileLink">Company Profile</a></li>
+        </ul>
+      </nav>
+      <a class="cta" href="#contact">Get in Touch</a>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- HERO SECTION --------------------------------------------------- -->
+    <section class="hero">
+      <div>
+        <h1>High-Quality Vehicle Body Fabrication</h1>
+        <p class="lead">Accredited builder of Modern Jeepneys (Class 1, 2 & 3). We also build UV bodies, L300, buses, aluminum vans, mini buses, and offer full vehicle rebody & customization services. Located in Taytay, Rizal.</p>
+        <p style="margin-top:1rem;"><a class="cta" href="#products">View Our Products</a></p>
+      </div>
+
+      <div class="slideshow-container">
+        <div class="slide fade"><img src="images/main-factory1.png" alt="Lucky 888 Factory 1"></div>
+        <div class="slide fade"><img src="images/main-factory2.png" alt="Lucky 888 Factory 2"></div>
+        <div class="slide fade"><img src="images/main-factory3.png" alt="Lucky 888 Factory 3"></div>
+        <div class="slide fade"><img src="images/main-factory4.png" alt="Lucky 888 Factory 4"></div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+    </section>
+
+    <!-- PRODUCTS SECTION ------------------------------------------------ -->
+    <section id="products">
+      <h2>Our Products</h2>
+      <div class="grid" id="productGrid">
+        <div class="card" data-product="class1"><h3>Modern Jeepney Class 1</h3><p>Compact and efficient — perfect for urban city routes.</p></div>
+        <div class="card" data-product="class2"><h3>Modern Jeepney Class 2</h3><p>Built for comfort and reliability for everyday commuters.</p></div>
+        <div class="card" data-product="class3"><h3>Modern Jeepney Class 3</h3><p>Spacious and durable for longer routes and higher capacity.</p></div>
+        <div class="card" data-product="uv-body"><h3>UV Body</h3><p>Strong, sleek, and designed for passenger transport or cargo use.</p></div>
+        <div class="card" data-product="aluminum-van"><h3>Aluminum Van</h3><p>Lightweight yet sturdy van bodies for logistics and deliveries.</p></div>
+        <div class="card" data-product="bus"><h3>Bus</h3><p>Engineered for safety and passenger comfort.</p></div>
+        <div class="card" data-product="dropside"><h3>Dropside</h3><p>Versatile trucks ideal for multiple cargo applications.</p></div>
+        <div class="card" data-product="customized"><h3>Other Customized Units</h3><p>Tailored vehicle builds based on your unique specifications.</p></div>
+      </div>
+    </section>
+
+    <!-- ABOUT ----------------------------------------------------------- -->
+    <section id="about" style="margin-top:3rem;">
+      <h2>About Us</h2> 
+      <p class="lead" style="text-align:center; max-width:800px; margin:auto;">
+        Lucky 888 Autoworks, Inc. is dedicated to producing durable, high-quality vehicle bodies that meet modern transport standards. 
+        Our skilled team combines craftsmanship and technology to build jeepneys, buses, UV express units, and other specialized vehicles trusted nationwide.
+      </p>
+    </section>
+
+    <!-- CONTACT --------------------------------------------------------- -->
+    <section id="contact" style="margin-top:3rem;">
+      <h2>Contact Us</h2>
+      <p style="text-align:center;">
+        <strong>Lucky 888 Autoworks, Inc.</strong><br>
+        #18 Velasquez St. Sitio Bangiad, Taytay, Rizal<br>
+        0935 808 3066 &nbsp; | &nbsp; 1234 1234
+      </p>
+
+      <form action="mailto:lucky888autoworks.jordan@gmail.com" method="POST" enctype="text/plain" style="max-width:500px; margin:2rem auto; text-align:center;">
+        <input type="text" name="Name" placeholder="Your Name" required style="width:100%; padding:0.8rem; border:1px solid #ccc; border-radius:8px; margin-bottom:0.6rem;">
+        <input type="email" name="Email" placeholder="Your Email" required style="width:100%; padding:0.8rem; border:1px solid #ccc; border-radius:8px; margin-bottom:0.6rem;">
+        <textarea name="Message" rows="4" placeholder="Your Message" required style="width:100%; padding:0.8rem; border:1px solid #ccc; border-radius:8px;"></textarea>
+        <button type="submit" class="cta" style="margin-top:1rem;">Send Message</button>
+      </form>
+
+    </section>
+
+  </main>
+
+  <!-- MACHINES & EQUIPMENT MODAL ---------------------------------------- -->
+  <div id="machinesModal" class="modal">
+    <div class="modal-content">
+      <span id="closeMachines" class="modal-close">&times;</span>
+      <h2 style="color:#2d5a27; text-align:center; margin-bottom:2rem;">Machines & Equipment</h2>
+      <div class="grid">
+        <div class="card"><h3>Hydraulic Press</h3><p>Used for shaping vehicle body parts with precision.</p></div>
+        <div class="card"><h3>Welding Station</h3><p>Ensures strong and safe chassis and body welding.</p></div>
+        <div class="card"><h3>Paint Booth</h3><p>High-quality painting for vehicle finishes.</p></div>
+        <div class="card"><h3>Laser Cutter</h3><p>For precise cutting of metal sheets and components.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUCTS MODAL ---------------------------------------------------- -->
+  <div id="productModal" class="modal">
+    <div class="modal-content">
+      <span id="closeProduct" class="modal-close">&times;</span>
+      <h2 id="modalTitle" style="color:#2d5a27; text-align:center; margin-bottom:1rem;"></h2>
+      <div id="modalItems" style="text-align:center; margin-bottom:1.5rem;"></div>
+      <div id="modalGallery" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1rem;"></div>
+    </div>
+  </div>
+
+  <!-- ✅ NEW: COMPANY PROFILE MODAL ------------------------------------- -->
+  <div id="companyProfileModal" class="modal">
+    <div class="modal-content" style="max-width:1000px;">
+      <span id="closeCompanyProfile" class="modal-close">&times;</span>
+      <h2 style="color:#2d5a27; text-align:center; margin-bottom:1rem;">Company Profile</h2>
+
+      <iframe 
+        src="pdf/company-profile.pdf"
+        style="width:100%; height:80vh; border:none; border-radius:10px;">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- FOOTER ------------------------------------------------------------ -->
+  <footer>
+    <p><strong>Lucky 888 Autoworks, Inc.</strong></p>
+    <p>#18 Velasquez St. Sitio Bangiad, Taytay, Rizal</p>
+    <p>0935 808 3066 &nbsp; | &nbsp; 1234 1234</p>
+    <p>© <span id="year"></span> Lucky 888 Autoworks, Inc.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    /* SLIDESHOW ------------------------------------------------------ */
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    function plusSlides(n) { showSlides(slideIndex += n); }
+    function showSlides(n) {
+      const slides = document.querySelectorAll(".slide");
+      if (n > slides.length) slideIndex = 1;
+      if (n < 1) slideIndex = slides.length;
+      slides.forEach(s => s.style.display = "none");
+      slides[slideIndex - 1].style.display = "block";
+    }
+
+    /* PRODUCT DATA & MODAL LOGIC ----------------------------------- */
+    const products = {
+      class1: { 
+        title: "Modern Jeepney Class 1", 
+        variants: {
+          "Class 1": ["images/C1A.jpg","images/C1B.jpg", "images/C1C.jpg"],
+          "Class 1 Extended": ["images/C1ExtA.jpg","images/C1ExtB.jpg", "images/C1ExtC.jpg", "images/C1ExtD.jpg", "images/C1ExtE.jpg", "images/C1ExtF.jpg"]
+        }
+      },
+      class2: { 
+        title: "Modern Jeepney Class 2", 
+        variants: {
+          "Unit 1": ["images/C2LoakanA.jpg","images/C2LoakanB.jpg","images/C2LoakanC.jpg","images/C2LoakanD.jpg","images/C2LoakanE.jpg","images/C2LoakanF.jpg", "images/C2LoakanG.jpg","images/C2LoakanH.jpg","images/C2LoakanI.jpg"],
+          "Unit 2": ["images/PAN1.png", "images/PAN2.png", "images/PAN3.png", "images/PAN4.png", "images/PAN5.png"]
+        }
+      },
+      class3: { 
+        title: "Modern Jeepney Class 3", 
+        variants: {
+          "Unit 1": ["images/LUT1.jpg", "images/LUT2.jpg", "images/LUT3.jpg", "images/LUT4.jpg"],
+          "Unit 2": ["images/USA1.jpg", "images/USA2.jpg", "images/USA3.jpg", "images/USA4.jpg", "images/USA5.jpg"]
+        }
+      },
+      "uv-body": { 
+        title: "UV Body", 
+        variants: {
+          "Mitsubishi L300": ["images/L3001.jpg","images/L3002.jpg","images/L3003.jpg","images/L3004.jpg","images/L3005.jpg", "images/L3006.jpg"],
+          "SINOTRUK (6 WHEELER)": ["images/HOWO1.png", "images/HOWO2.png", "images/HOWO3.png", "images/HOWO4.png", "images/HOWO5.png", "images/HOWO6.png","images/HOWO7.png", "images/HOWO8.png", "images/HOWO9.png"]
+        }
+      },
+      "aluminum-van": { 
+        title: "Aluminum Van", 
+        variants: {
+          "Closed Van": ["images/van1.jpg"],
+          "Custom Van": ["images/van2.jpg"]
+        }
+      },
+      bus: { 
+        title: "Bus", 
+        variants: {
+          "HINO BUS - REBODY": ["images/ZAM1.jpg", "images/ZAM2.jpg", "images/ZAM3.jpg", "images/ZAM4.jpg", "images/ZAM5.jpg", "images/ZAM6.jpg", "images/ZAM7.jpg", "images/ZAM8.jpg", "images/ZAM9.jpg"],
+          "-": ["images/bus2.jpg"]
+        }
+      },
+      dropside: { 
+        title: "Dropside", 
+        variants: {
+          "Mitsubishi Dropside MOTORCYCLE CITY": ["images/MC1.jpg","images/MC2.jpg", "images/MC3.jpg", "images/MC4.jpg", "images/MC5.jpg", "images/MC6.jpg"],
+          "Mitsubishi Dropside": ["images/DROP1.jpg","images/DROP2.jpg","images/DROP3.jpg"]
+        }
+      },
+      customized: { 
+        title: "Other Customized Units", 
+        variants: {
+          "ROLLING STORE - ALUM VAN (RIVETLESS)": ["images/M1.jpg","images/M2.jpg","images/M3.jpg","images/M4.jpg","images/M5.jpg","images/M6.jpg","images/M7.jpg","images/M8.jpg","images/M9.jpg"],
+          "Rescue Van": ["images/custom2.jpg"],
+          "Food Truck": ["images/custom3.jpg"]
+        }
+      }
+    };
+
+    const productCards = document.querySelectorAll('#productGrid .card');
+    const productModal = document.getElementById('productModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalItems = document.getElementById('modalItems');
+    const modalGallery = document.getElementById('modalGallery');
+    const closeProduct = document.getElementById('closeProduct');
+
+    productCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const key = card.dataset.product;
+        const product = products[key];
+        if (!product) return;
+
+        modalTitle.textContent = product.title;
+        modalGallery.innerHTML = '';
+        modalItems.innerHTML = Object.keys(product.variants).map(variant => 
+          `<button class="cta" style="margin:0.3rem;" data-variant="${variant}">${variant}</button>`
+        ).join('');
+
+        modalItems.querySelectorAll('button').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const variant = btn.dataset.variant;
+            modalGallery.innerHTML = product.variants[variant].map(src => 
+              `<img src="${src}" alt="${variant}" style="width:100%; border-radius:8px;">`
+            ).join('');
+          });
+        });
+
+        productModal.style.display = 'block';
+      });
+    });
+
+    closeProduct.addEventListener('click', () => { productModal.style.display = 'none'; });
+    window.addEventListener('click', e => { if(e.target === productModal) productModal.style.display = 'none'; });
+
+    /* COMPANY PROFILE MODAL ------------------------------------------ */
+    const companyProfileLink = document.getElementById('companyProfileLink');
+    const companyProfileModal = document.getElementById('companyProfileModal');
+    const closeCompanyProfile = document.getElementById('closeCompanyProfile');
+
+    companyProfileLink.addEventListener('click', e => {
+      e.preventDefault();
+      companyProfileModal.style.display = 'block';
+    });
+
+    closeCompanyProfile.addEventListener('click', () => { 
+      companyProfileModal.style.display = 'none'; 
+    });
+
+    window.addEventListener('click', e => {
+      if (e.target === companyProfileModal) companyProfileModal.style.display = 'none';
+    });
+
+  </script>
+
+</body>
+</html>
